@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Animated Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header Section */
+        header {
+            background: #673ab7;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px #4527a0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffcc80;
+            font-weight: bold;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff5722;
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        section {
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section h2 {
+            color: #673ab7;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #673ab7;
+            color: white;
+        }
+
+        td img {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            height: auto;
+        }
+
+        /* Skills Section Styling */
+        .progress-bar {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress-bar label {
+            flex: 1;
+        }
+
+        .progress-bar progress, .progress-bar meter {
+            flex: 2;
+            margin: 0 10px;
+        }
+
+        .progress-bar span {
+            flex: 1;
+            text-align: right;
+        }
+
+        fieldset {
+            border: 2px solid #673ab7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #673ab7;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #4527a0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        footer a {
+            color: #ffcc80;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff5722;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff5722;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover {
+            background: #d84315;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>John Doe</h1>
+        <p>Software Developer | Data Enthusiast | Problem Solver</p>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#experience">Work Experience</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a <strong>passionate developer</strong> with experience in <mark>full-stack development</mark>.
+                My expertise spans <abbr title="HyperText Markup Language">HTML</abbr>,
+                <abbr title="Cascading Style Sheets">CSS</abbr>, and modern JavaScript frameworks.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <details>
+                <summary>Senior Software Engineer (SOX Auditor) at Accenture (Jan 2022 - Jan 2024)</summary>
+                <p><strong>Location:</strong> Bengaluru, Karnataka, India (Hybrid)</p>
+                <p>Managed a sub-project independently, ensuring compliance with SOX regulations. Key achievements:</p>
+                <ol>
+                    <li>Mentored junior team members and led process audits.</li>
+                    <li>Demonstrated exceptional project management skills.</li>
+                </ol>
+                <p><strong>Skills:</strong> Mentoring, Project Management, Internal Auditing</p>
+            </details>
+
+            <details>
+                <summary>Software Engineer (HIPAA Auditor) at Accenture (Jul 2020 - Jan 2022)</summary>
+                <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
+                <p>Specialized in IT audits focusing on HIPAA compliance. Key achievements:</p>
+                <ol>
+                    <li>Completed AZ-900 certification in Microsoft Azure.</li>
+                    <li>Developed expertise in Microsoft Power Apps and Tableau.</li>
+                </ol>
+                <p><strong>Skills:</strong> Tableau, Microsoft Power Apps, Compliance Auditing</p>
+            </details>
+
+            <details>
+                <summary>Associate Software Engineer (Internal Auditor) at Accenture (Sep 2018 - Jun 2020)</summary>
+                <p><strong>Location:</strong> Chennai, Tamil Nadu, India (Hybrid)</p>
+                <p>Focused on internal audits and regulatory compliance. Key achievements:</p>
+                <ol>
+                    <li>Learned and applied SOX and HIPAA auditing standards.</li>
+                    <li>Prepared documentation for audit findings.</li>
+                </ol>
+                <p><strong>Skills:</strong> Communication, Internal Auditing</p>
+            </details>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Graduation Date</th>
+                        <th>GPA</th>
+                        <th>Achievements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MSc Computer Science</td>
+                        <td>
+                            <img src="liu-logo.png" alt="LIU Logo">
+                            Long Island University
+                        </td>
+                        <td>May 2025</td>
+                        <td>4.0</td>
+                        <td>Dean’s List, Research in AI</td>
+                    </tr>
+                    <tr>
+                        <td>Bachelor's in Electronics and Communication</td>
+                        <td>
+                            <img src="anna-university-logo.png" alt="Anna University Logo">
+                            Anna University
+                        </td>
+                        <td>May 2018</td>
+                        <td>3.8</td>
+                        <td>Top 5%, Robotics Club</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <fieldset>
+                <legend><strong>Technical Skills</strong></legend>
+                <div class="progress-bar">
+                    <label for="html">HTML</label>
+                    <progress id="html" value="90" max="100"></progress> <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="css">CSS</label>
+                    <progress id="css" value="85" max="100"></progress> <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="js">JavaScript</label>
+                    <progress id="js" value="75" max="100"></progress> <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="cpp">C++</label>
+                    <progress id="cpp" value="80" max="100"></progress> <span>80%</span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>Soft Skills</strong></legend>
+                <div class="progress-bar">
+                    <label for="comm">Communication</label>
+                    <meter id="comm" value="85" min="0" max="100"></meter> <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="teamwork">Teamwork</label>
+                    <meter id="teamwork" value="90" min="0" max="100"></meter> <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="leadership">Leadership</label>
+                    <meter id="leadership" value="80" min="0" max="100"></meter> <span>80%</span>
+                </div>
+            </fieldset>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">
+                <h3>AI Ecosystem</h3>
+                <aside><p>An advanced AI-based project exploring healthcare solutions.</p></aside>
+                <a href="https://example.com" target="_blank">View Project</a>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <article>
+            <h2>Hobbies</h2>
+            <figure>
+                <img src="photography.jpg" alt="Photography">
+                <figcaption>Photography</figcaption>
+            </figure>
+            <figure>
+                <img src="travel.jpg" alt="Traveling">
+                <figcaption>Traveling</figcaption>
+            </figure>
+            <figure>
+                <img src="gaming.jpg" alt="Gaming">
+                <figcaption>Gaming</figcaption>
+            </figure>
+            </article>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:john.doe@example.com">john.doe@example.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234-567-890</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/johndoe" target="_blank">linkedin.com/in/johndoe</a></p>
+            <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank you for visiting my profile! <strong>Let’s Connect</strong>.</p>
+        <p>
+            Follow me on:
+            <a href="https://linkedin.com/in/johndoe" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/johndoe" target="_blank">GitHub</a> 
+        
+        </p>
+        <p>&copy; 2025 John Doe | <a href="#header" id="back-to-top">Back to Top</a></p>
+    </footer>
+    
+    <a href="#header" class="back-to-top" id="back-to-top-button">↑</a>
+    
+
+    <a href="#header" class="back-to-top">↑</a>
+</body>
+</html>

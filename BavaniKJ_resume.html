@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Animated Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Section */
+        header {
+            background: #673ab7;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px #7d6dad;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        header a {
+            font-size: 30;
+            margin: 0;
+            padding: 0.5rem 1rem;
+            color: #ffcc80;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffcc80;
+            font-weight: bold;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff5722;
+            transform: scale(1.1);
+        }
+
+        /* Section Styling */
+        section {
+            margin: 20px;
+            padding: 30px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section h2 {
+            color: #673ab7;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #673ab7;
+            color: white;
+        }
+
+        td img {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            height: auto;
+        }
+
+      
+/* General styles for the hobbies section */
+.hobby-gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.hobby-item {
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hobby-item:hover {
+    transform: scale(1.1);
+}
+
+.hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.hobby-item:hover .hover-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+        /* Skills Section Styling */
+        .progress-bar {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .progress-bar label {
+            flex: 1;
+        }
+
+        .progress-bar progress, .progress-bar meter {
+            flex: 2;
+            margin: 0 10px;
+        }
+
+        .progress-bar span {
+            flex: 1;
+            text-align: right;
+        }
+
+        fieldset {
+            border: 2px solid #673ab7;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        legend {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #673ab7;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #4527a0;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        footer a {
+            color: #ffcc80;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff5722;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff5722;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top:hover {
+            background: #d84315;
+            transform: scale(1.1);
+        }
+        /* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for readability */
+        padding: 15px;   /* Reduce padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Scale down the header title */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contactme {
+        gap: 10px; /* Reduce spacing in the contact form */
+    }
+
+    .hobbies {
+        flex-direction: column; /* Stack hobbies vertically */
+        gap: 15px; /* Adjust spacing between hobbies */
+    }
+}
+       
+/* General Styles for Contact Form */
+#contactme {
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact h2 {
+    text-align: center;
+    color: #673ab7;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #673ab7;
+    box-shadow: 0 0 8px rgba(103, 58, 183, 0.5);
+    outline: none;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #673ab7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #5e35b1;
+    transform: scale(1.05);
+}
+
+.submit-button:active {
+    background: #512da8;
+    transform: scale(0.95);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+        /* Media Query for Menu */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+<!-- Contact Information -->
+
+    <header id="header">
+        <h1 tabindex="1">Bavani Karthikeyan Janaki</h1>
+    <p tabindex="2">Graduate Student at Long Island University</p>
+
+    <div class="contact-info" >
+        <a href="mailto:bavanikarthikeyan11@gmail.com">bavanikarthikeyan11@gmail.com</a>
+        <a href="tel:+12014676757">2014-676-757</a>
+        <a href="https://www.linkedin.com/in/bavani-karthikeyan-janaki/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Bavani1125" target="_blank">GitHub</a>
+    </div>
+
+<!-- Hyperlinks that redirect to specific sections in same page -->
+    <nav>
+        <a href="#about" tabindex="3">About Me</a>
+        <a href="#experience" tabindex="4">Work Experience</a>
+        <a href="#education" tabindex="5">Education</a>
+        <a href="#skills" tabindex="6">Skills</a>
+        <a href="#projects" tabindex="7">Projects</a>
+        <a href="#certifications" tabindex="8">Certifications</a>
+        <a href="#hobbies" tabindex="8">Hobbies</a>
+        <a href="#contact" tabindex="9">Contact Me</a>
+    </nav>
+    </header>
+ 
+    <!-- About Me Information -->
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I am a graduate student pursuing <strong>Master's in Computer and Information Science at Long Island University</strong> with a strong foundation in both technology and business operations. My previous experience includes working at <mark> Accenture</mark>, where I gained valuable insights into consulting and project management, as well as a role as an <em> Internal Auditor </em> specializing in SOX and <abbr>Health Insurance Portability and Accountability Act</abbr> compliance. As I proactively explore <strong> internship opportunities </strong> for the summer of 2025, I am eager to leverage my skills in technology, data analysis, and compliance within a dynamic and innovative organization.
+                
+            </p>
+        </section>
+
+    <!-- Work Experience Details -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <details>
+                <summary>Senior Software Engineer (SOX Auditor) at Accenture (Jan 2022 - Jan 2024)</summary>
+                <p><strong>Location:</strong> Bengaluru, Karnataka, India (Hybrid)</p>
+                <p>Managed a sub-project independently, ensuring compliance with SOX regulations. Key achievements:</p>
+                <ol>
+                    <li>Mentored junior team members and led process audits.</li>
+                    <li>Demonstrated exceptional project management skills.</li>
+                </ol>
+                <p><strong>Skills:</strong> Mentoring, Project Management, Internal Auditing</p>
+            </details>
+
+            <details>
+                <summary>Software Engineer (HIPAA Auditor) at Accenture (Jul 2020 - Jan 2022)</summary>
+                <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
+                <p>Specialized in IT audits focusing on HIPAA compliance. Key achievements:</p>
+                <ol>
+                    <li>Completed AZ-900 certification in Microsoft Azure.</li>
+                    <li>Developed expertise in Microsoft Power Apps and Tableau.</li>
+                </ol>
+                <p><strong>Skills:</strong> Tableau, Microsoft Power Apps, Compliance Auditing</p>
+            </details>
+
+            <details>
+                <summary>Associate Software Engineer (Internal Auditor) at Accenture (Sep 2018 - Jun 2020)</summary>
+                <p><strong>Location:</strong> Chennai, Tamil Nadu, India (Hybrid)</p>
+                <p>Focused on internal audits and regulatory compliance. Key achievements:</p>
+                <ol>
+                    <li>Learned and applied SOX and HIPAA auditing standards.</li>
+                    <li>Prepared documentation for audit findings.</li>
+                </ol>
+                <p><strong>Skills:</strong> Communication, Internal Auditing</p>
+            </details>
+        </section>
+<!-- Education Details -->
+        <section id="education">
+            <h2>Education</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Graduation Date</th>
+                        <th>GPA</th>
+                        <th>Achievements</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MSc Computer Science</td>
+                        <td>
+                            <img src="https://sportslogohistory.com/wp-content/uploads/2024/01/liu_sharks_2019-pres.png" alt="LIU Logo" width="300" height="20">
+                            Long Island University
+                        </td>
+                        <td>May 2025</td>
+                        <td>3.8</td>
+                        <td>Thesis: Sentiment Analysis in Healthcare </td>
+                    </tr>
+                    <tr>
+                        <td>Bachelor's in Electronics and Communication</td>
+                        <td>
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/49/Anna_University_Logo.svg/640px-Anna_University_Logo.svg.png" alt="Anna University Logo">
+                            Anna University
+                        </td>
+                        <td>May 2018</td>
+                        <td>3.0</td>
+                        <td>Paper Published: 5G Communucations </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+<!-- Skills Details -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <fieldset>
+                <legend><strong>Technical Skills</strong></legend>
+                <div class="progress-bar">
+                    <label for="html">HTML</label>
+                    <progress id="html" value="90" max="100"></progress> <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="css">CSS</label>
+                    <progress id="css" value="85" max="100"></progress> <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="js">JavaScript</label>
+                    <progress id="js" value="75" max="100"></progress> <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="cpp">C++</label>
+                    <progress id="cpp" value="80" max="100"></progress> <span>80%</span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>Soft Skills</strong></legend>
+                <div class="progress-bar">
+                    <label for="comm">Communication</label>
+                    <meter id="comm" value="85" min="0" max="100"></meter> <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="teamwork">Teamwork</label>
+                    <meter id="teamwork" value="90" min="0" max="100"></meter> <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <label for="leadership">Leadership</label>
+                    <meter id="leadership" value="80" min="0" max="100"></meter> <span>80%</span>
+                </div>
+            </fieldset>
+        </section>
+
+<!-- Projects Worked on -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card">
+                <h3>Advanced E-Health Monitoring Systems Using Arduino</h3>
+                <aside><p>A pulse oximeter using an Arduino Uno can be built by connecting a MAX30102 sensor to the Arduino's I2C pins (SCL and SDA) to read heart rate and SpO2 data.</p></aside>
+                <br>
+                <h3>Auto Night Light Using LDR</h3>
+                <aside><p>An auto night light using an Light Dependent Resistor works by measuring light levels with the LDR and turning on a light when the light level falls below a certain threshold.</p></aside>
+                <br>
+                <h3>Target Detection Using MATLAB</h3>
+                <aside><p>Target detection in MATLAB involves processing images using techniques like edge detection and template matching to identify specific objects or regions.</p></aside>
+                <br>
+            </div>
+        </section>
+
+<!-- Certification Details -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="card">
+        <dl>
+            <dt>
+                <figure>
+                    <img src="https://images.credly.com/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/twitter_thumb_201604_image.png" 
+                         alt="Microsoft Azure Fundamentals" width="50" height="50">
+                    <figcaption><strong>Microsoft Azure Fundamentals AZ-900</strong></figcaption>
+                </figure>
+            </dt>
+            <dd>
+                A foundational certification from Microsoft validating knowledge of cloud services and how they work in Azure.
+            </dd>
+            
+            <dt>
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/0/08/Indian_Institute_of_Management_Rohtak_Logo.png" 
+                         alt="Entrepreneurship by IIM Rohtak" width="50" height="50">
+                    <figcaption><strong>Entrepreneurship by IIM Rohtak</strong></figcaption>
+                </figure>
+            </dt>
+            <dd>
+                A certification program covering the fundamentals of entrepreneurship, innovation, and business management.
+            </dd>
+        </dl>
+    </div>
+</section>
+
+
+
+        
+<!-- Hobby Details -->
+<section id="hobbies">
+    <article>
+        <h2>Hobbies</h2>
+        <div class="hobby-gallery">
+            <figure class="hobby-item">
+                <img src="https://cdn-icons-png.flaticon.com/512/7398/7398541.png" 
+                     alt="Audiobooks and Podcasts" width="50" height="50">
+                <figcaption>Audiobooks and Podcasts</figcaption>
+                <div class="hover-info">
+                    Thrillers and History Podcasts/Novels
+                </div>
+            </figure>
+            <figure class="hobby-item">
+                <img src="https://us.123rf.com/450wm/lukpedclub/lukpedclub2104/lukpedclub210400097/167561112-cake-decorating-icon-bakery-and-baking-related-vector-illustration.jpg" 
+                     alt="Baking" width="50" height="50">
+                <figcaption>Baking</figcaption>
+                <div class="hover-info">
+                    Fresh Cream Fruit Cakes
+                </div>
+            </figure>
+        </div>
+    </article>
+</section>
+<!-- Contact Me Form -->
+<section id="contactme">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</section>
+       
+      </main>
+<!-- Footer with Social Media links and Copyright-->
+<footer role="contentinfo">
+    <p>Thank you for visiting my profile! <strong>Let’s Connect</strong>.</p>
+    <p>
+        Follow me on:
+        <a href="https://www.linkedin.com/in/bavani-karthikeyan-janaki/" target="_blank" aria-label="Visit my LinkedIn profile">LinkedIn</a> |
+        <a href="https://github.com/Bavani1125" target="_blank" aria-label="Visit my GitHub profile">GitHub</a>
+    </p>
+    <p>&copy; 2025 Bavani Karthikeyan Janaki | 
+        <a href="#header" id="back-to-top" aria-label="Back to top of the page">Back to Top</a>
+    </p>
+</footer>
+
+<a href="#header" class="back-to-top" id="back-to-top-button" aria-label="Back to top of the page">↑</a>
+<a href="#header" class="back-to-top" aria-label="Back to top of the page">↑</a>
+
+</body>
+</html>
